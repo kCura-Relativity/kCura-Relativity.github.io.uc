@@ -1,0 +1,62 @@
+﻿<!--<div class="search-header" [ngClass]="{ 'visible' : viewModel.isVisible }">-->
+<div class="search-header col-8_sm-10 grid" [ngClass]="{ 'collapsed' : viewModel.showResults,  'expanded': viewModel.showTopics}">
+    <div class="search-control-container col-12 grid-center">
+
+
+        <div class="authors-label-column" [ngClass]="{ 'hidden' : viewModel.showResults }">
+            <div class="vertical-text"  [ngClass]="{ 'hidden' : viewModel.showResults }">Authors</div>
+        </div>
+
+        <div class="search-row col-12 grid">
+            <div class="col-12">
+                <div class="icon-search"></div>
+                <input id="search-input" #searchBox type="text" autofocus class="search-box" placeholder="Search" (keyup)="onSearchTextChanged(searchBox.value)" value="{{viewModel.searchText}}" />
+            </div>
+
+            <div class="result-count col-12" [ngClass]="{ 'hidden' : !viewModel.showResults }">{{viewModel.resultsCount}} results</div>
+        </div>
+
+
+        <div class="bottom-panel col-12 grid" [ngClass]="{ 'hidden' : viewModel.showResults }">
+            <div class="search-content-row col-5_xs-0">
+                <div class="authors-column">
+                    <div class="author"><div class="rectangle orange"></div><div class="search-text orange" (click)="onAuthorSelected($event.target.innerText)">RELATIVITY</div></div>
+                    <div class="author"><div class="rectangle purple"></div><div class="search-text purple" (click)="onAuthorSelected($event.target.innerText)">DEVELOPMENT PARTNERS</div></div>
+                    <div class="author"><div class="rectangle green"></div><div class="search-text green" (click)="onAuthorSelected($event.target.innerText)">OPEN SOURCE COMMUNITY</div></div>
+                </div>
+            </div>
+            <div class="topics-column col-7_xs-12 grid" [ngClass]="{ 'hidden' : viewModel.showResults }">
+                <div class="vertical-text vertical-text-topics"  [ngClass]="{ 'hidden' : viewModel.showResults }">Topics</div>
+                <div class="topics-array col-12 grid">
+
+                    <ul class="topics-container col-6" [ngClass]="{'expanded': viewModel.showTopics }">
+                        <li class="topic" *ngFor="let topic of topicsLeft" (click)="onTopicSelected(topic.name)">
+                            {{topic.name}}
+                        </li>
+                    </ul>
+                    <ul class="topics-container col-6" [ngClass]="{'expanded': viewModel.showTopics }">
+                        <li class="topic" *ngFor="let topic of topicsRight" (click)="onTopicSelected(topic.name)">
+                            {{topic.name}}
+                        </li>
+                    </ul>
+
+                    <div class="see-all-topics" (click)="toggleShowAllTopics()" [ngClass]="{ 'expanded' : viewModel.showTopics }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="close-column">
+        <div class="icon-close" (click)="onSearchClosed()"></div>
+    </div>
+</div>
+<!--height adj
+
+    top-row = 145px (pulls page up)
+    search = 145px (pulls search control up)
+
+search-row
+add
+    position: absolute;
+    top: 0%;
+
+opacity: 0 everything else in search bar.-->

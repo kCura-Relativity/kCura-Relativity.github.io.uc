@@ -1,0 +1,22 @@
+﻿<div class="panel-container grid">
+    <div class="panel-header col-12">Development Partners</div>
+    <div class="panel-row col-12">
+        <div class="panel-text">
+            Interested in creating or contributing to a project?
+            <a class="link-text" href="mailto:customdev@kcura.com?subject=Interested in contributing to a project">Let us know</a><div class="icon-arrow-small"></div>
+        </div>
+    </div>
+    <div class="tile-container grid-center" [ngStyle]="{'height': viewModel.height}">
+        <partner-panel-item *ngFor="let p of viewModel.partnerPanelItems"
+                            [viewModel]="p"
+                            [index]="p.index"
+                            [morePartnersIndex]="viewModel.panelItemCount"
+                            (click)="onPartnerSelected(p)"
+                            class="col-3"></partner-panel-item>
+
+    </div>
+    <div class="show-all-partners grid-right" [ngClass]="{'hidden' : !viewModel.shouldShowMorePartners }">
+        <a class="link-text" [ngClass]="{'hide-text': viewModel.expanded}" href="#" (click)="onShowMorePartners()"></a><div class="icon-arrow-small">
+        </div>
+    </div>
+</div>

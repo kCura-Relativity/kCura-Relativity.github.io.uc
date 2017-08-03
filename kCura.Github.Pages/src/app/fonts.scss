@@ -1,0 +1,187 @@
+﻿/*
+Font: 		Cartograph sans CF
+Style: 		Extra Bold Italic
+URL: 		https://www.youworkforthem.com/font/T6736/cartograph-cf
+Foundry: 	Connary Fagen
+Foundry: 	https://www.youworkforthem.com/designer/479/connary-fagen
+Copyright:	© 2016 Connary Fagen
+Version: 	17
+Created:	September 25, 2016
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-thin.woff2) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-thin-italic.woff2) format('woff2');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-light-italic.woff2) format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-italic.woff2) format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-medium-italic.woff2) format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-demi-bold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-demi-bold-italic.woff2) format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-bold-italic.woff2) format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-extra-bold.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-extra-bold-italic.woff2) format('woff2');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-heavy.woff2) format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cartograph Sans CF';
+    src: url(../content/fonts/cartograph-sans-cf/cartograph-sans-cf-heavy-italic.woff2) format('woff2');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+/*Application Glyphs*/
+@font-face {
+  font-family: 'relativity-glyphs';
+  src: url('../content/fonts/relativity-glyphs.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'relativity-glyphs' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-app:before {
+  content: "\e900";
+}
+.icon-arrow-small:before {
+  content: "\e901";
+}
+.icon-arrow-short:before {
+  content: "\e902";
+}
+.icon-close:before {
+  content: "\e903";
+}
+.icon-dropdown-arrow:before {
+  content: "\e904";
+}
+.icon-fork:before {
+  content: "\e905";
+}
+.icon-logo-relativity:before {
+  content: "\e906";
+}
+.icon-script:before {
+  content: "\e907";
+}
+.icon-search:before {
+  content: "\e908";
+}
+.icon-star:before {
+  content: "\e909";
+}
+.icon-tool:before {
+  content: "\e90a";
+}
+
+

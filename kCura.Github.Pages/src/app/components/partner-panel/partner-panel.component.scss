@@ -1,0 +1,112 @@
+﻿@import '../../colors.scss';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    font-family: 'Cartograph Sans CF';
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active) {
+    .panel-container {
+        width: 668px;
+    }
+}
+
+.panel-container {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    /*width: 668px;*/
+    max-width: 668px;
+    transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    .panel-header {
+        height: 24px;
+        width: 100%;
+        color: $orange;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+
+    .panel-row {
+        margin-bottom: 20px;
+    }
+
+    partner-panel-item {
+        margin: 0;
+    }
+
+    .panel-text {
+        height: 20px;
+        color: #666562;
+        line-height: 20px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .link-text {
+        transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+        height: 13px;
+        color: $link-text;
+        line-height: 13px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        padding-bottom: 4px;
+        border-bottom: 1px solid $medium-gray;
+
+        &:hover {
+            color: #666562;
+            border-color: #666562;
+        }
+    }
+
+    .icon-arrow-small {
+        color: #9E9D98;
+        display: inline-block;
+        font-size: 8px;
+        margin-left: 5px;
+    }
+
+    .tile-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        margin: 3px;
+        transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+        overflow: hidden;
+    }
+
+    .show-all-partners {
+        height: 60px;
+        padding-right: 15px;
+
+        a {
+            margin: 0;
+            padding-top: 5px;
+            text-align: right;
+            cursor: pointer;
+
+            &:after {
+                content: "Show all partners";
+            }
+        }
+
+        .icon-arrow-small {
+            padding-top: 9px;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .hide-text:after {
+        content: "Hide partners" !important;
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style-guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-424.000000, -242.000000)" id="Icon/Close" fill="#2E2E2E">
+            <g transform="translate(424.000000, 242.000000)">
+                <polygon points="1.34020619 0 0 1.34715026 8.7628866 10.0518135 0.103092784 18.7564767 1.34020619 20 10 11.2953368 18.6597938 20 19.8969072 18.7564767 11.2371134 10.0518135 20 1.34715026 18.6597938 0 10 8.80829016"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

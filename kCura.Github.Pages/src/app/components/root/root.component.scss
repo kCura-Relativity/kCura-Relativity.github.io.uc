@@ -1,0 +1,164 @@
+﻿@import '../../colors.scss';
+
+:host {
+    width: 100%;
+    height: 100%;
+    /*display: flex block;
+    flex-direction: column;*/
+    background-color: #F2F1E9;
+    overflow-y: scroll;
+}
+
+.main-content {
+    /*display: flex;
+    flex-direction: column;
+    position: relative;*/
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.top-row {
+    height: 326px;
+    /*display: flex;
+    flex: 0 0 auto;*/
+    position: relative;
+    top: 0;
+}
+
+search, .top-row {
+    transition: all 300ms cubic-bezier(.25,.1,.25,1);
+    height: 325px;
+}
+
+.selector-container {
+    position: relative;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.inner-root {
+    width: 100%;
+    transition: all 300ms cubic-bezier(.25,.1,.25,1);
+}
+
+.search-collapsed {
+    height: 145px;
+}
+
+.topics-expanded {
+    height: 420px;
+    transition: all 300ms cubic-bezier(.25,.1,.25,1);
+}
+
+.header-hidden {
+    top: -351px;
+}
+
+.hidden {
+    display: none;
+}
+
+.bottom-row {
+    background-color: #EFEEE6;
+    justify-content: center;
+    width: 100%;
+    height: 312px;
+    display: flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+a {
+    height: 20px;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $medium-gray;
+    color: $link-text;
+
+    &:hover {
+        color: #666562;
+        border-color: #666562;
+    }
+}
+
+.footer-container {
+    margin-top: 50px;
+    /*max-width: 668px;
+    display: flex;
+    position: center;
+    flex-direction: column;*/
+}
+
+.footer-title {
+    color: #FF7F2F;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    opacity: 1;
+    margin-bottom: 12px;
+    max-width: 668px;
+}
+
+.footer-text {
+    height: 20px;
+    color: #666562;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 20px;
+    max-width: 668px;
+}
+
+.footer-link {
+    height: 13px;
+    color: #9E9D98;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+.community-row {
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.footer-row {
+    flex-direction: row;
+    display: flex;
+
+    a {
+        height: 20px;
+        text-decoration: none;
+        padding-bottom: 4px;
+        border-bottom: 1px solid $medium-gray;
+
+        &:hover {
+            color: #666562;
+            border-color: #666562;
+        }
+    }
+}
+
+.footer-row-text {
+    color: #9E9D98;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+.large-margin {
+    margin-left: 250px;
+}
+
+.small-margin {
+    margin-left: 24px;
+}
+
+.icon-arrow-small {
+    color: #9E9D98;
+    display: inline-block;
+    font-size: 8px;
+    margin-left: 5px;
+    text-decoration: none;
+    border-bottom: 0px;
+}

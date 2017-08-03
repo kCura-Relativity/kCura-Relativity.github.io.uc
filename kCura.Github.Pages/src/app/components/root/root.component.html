@@ -1,0 +1,35 @@
+﻿<div class="main-content">
+    <div class="top-row grid" [ngClass]="{ 'search-collapsed' : (root.observable | async).showResults,'topics-expanded' : (search.observable | async).showTopics}">
+        <!--needs to be position relattive-->
+        <search class="grid" [viewModel]="(search.observable | async)" [ngClass]="{ 'search-collapsed' : (root.observable | async).showResults,'topics-expanded' : (search.observable | async).showTopics}"></search><!--absolute-->
+        <header class="grid" [ngClass]="{'header-hidden' : (root.observable | async).isSearchVisible}" [viewModel]="(header.observable | async)"></header><!--absolute-->
+    </div>
+
+    <div class="grid-center">
+        <partner-panel class="col-8_sm-10 grid" [viewModel]="(partnerPanel.observable | async)" [ngClass]="{'hidden' : (search.observable | async).showResults}"></partner-panel>
+    </div>
+
+    <div class="grid-center" [ngClass]="{'expanded' : (search.observable | async).showTopics }">
+        <repository class="col-8_sm-10 grid-center" [viewModel]="(repository.observable | async)" [showResults]=" (search.observable | async).showResults"></repository>
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <div class="bottom-row  col-8_sm-10 grid-center">
+        <div class="footer-container">
+            <div class="footer-title">
+                Interested in learning more about Relativity development?
+            </div>
+            <div class="footer-text">Get started with the help of the Relativity DevHelp Community.</div>
+            <div class="community-row">
+                <a href="https://platform.kcura.com/9.5/Content/Site_Resources/Get_started_with_DevHelp.htm?Highlight=devhelp" target="_blank" class="footer-link">Get Started</a><a href="#" class="icon-arrow-small"></a>
+            </div>
+            <div class="footer-row">
+                <div class="footer-row-text copyright">© 2017 kCura LLC</div>
+                <a href="https://community.relativity.com/s/group/0F9500000008vXyCAI" target="_blank" class="footer-link large-margin">Follow us</a>
+                <a href="https://www.kcura.com/join-the-team/available-positions/" target="_blank" class="footer-link small-margin">Join our team</a>
+                <a href="https://www.kcura.com/Relativity" target="_blank" class="footer-link small-margin ">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>

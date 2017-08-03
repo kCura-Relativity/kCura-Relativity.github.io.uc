@@ -1,0 +1,80 @@
+﻿<div class="container col-12 grid-center">
+
+    <div class="header" [ngClass]="isHidden()">Projects</div>
+
+    <div class="featured-items col-12 grid-center" [ngClass]="isHidden()">
+        <div class="vertical-label featured">Featured</div>
+        <repository-item *ngFor="let f of viewModel.featuredRepos"
+                         [viewModel]="f"
+                         class="col-12 grid"></repository-item>
+    </div>
+
+
+
+    <div class="col-12 grid-right filter" [ngClass]="isHidden()">
+        <!--
+        //css for custom drop down
+        .filter {
+            height: 25px;
+            position: relative;
+            color: $link-text;
+
+            .sort-text {
+                display: inline-block;
+                width: 100px;
+                color: $link-text;
+                margin-right: -2px;
+
+            .link-text {
+                color: $link-text;
+
+                &:hover {
+                    color: $link-text;
+                }
+
+                &:active {
+                    color: $link-text;
+                }
+            }
+
+            .icon-dropdown-arrow {
+                color: $link-text;
+                font-size: 5px;
+                margin-left: 5px;
+                position: absolute;
+                display: inline;
+                top: 5px;
+                }
+            }
+        }
+
+        //for a custom control use the following:
+        <div class="sort-text">Sort <a class="link-text" href="#">Popular</a><div class="icon-dropdown-arrow"></div></div>-->
+
+
+        <!--for angular native select use this.
+            for option binding and selected item binding see: 
+            https://www.w3schools.com/angular/angular_select.asp -->
+        <div class="sort-text">Sort 
+            <select class="link-text" [(ngModel)]="viewModel.selectedFilter" (change)="onFilterChanged(viewModel)">
+                <option></option>
+                <option>Popular</option>
+                <option>Newest</option>
+                <option>Oldest</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="all-items col-12 grid-center" [ngClass]="isHidden()">
+        <div class="vertical-label everything">Everything</div>
+        <repository-item *ngFor="let f of viewModel.allRepos"
+                         [viewModel]="f"
+                         class="col-12 grid"></repository-item>
+    </div>
+
+
+    <div class="all-items bottom" [ngClass]="isSearchResultsVisible()">
+        <repository-item *ngFor="let f of viewModel.searchResultsRepos"
+                         [viewModel]="f"></repository-item>
+    </div>
+</div>

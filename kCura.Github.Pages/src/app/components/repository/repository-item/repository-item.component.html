@@ -1,0 +1,22 @@
+﻿<a href="{{viewModel.html_url}}" target="_blank" class="container">
+    <div class="author-type-column" [ngClass]="authorTypeToClass()"></div>
+    <div class="icon-column">
+        <div class="project-type-icon" [ngClass]="projectTypeToClass()"></div>
+    </div>
+    <div class="icon-arrow-short"></div>
+    <div class="content-column">
+        <div class="partner-text" [ngClass]="authorTypeToClass()">{{viewModel.partner}}</div>
+        <div class="project-row">
+            <div class="project-name">{{viewModel.name}}</div><div class="version">{{viewModel.version}}</div>
+        </div>
+        <div class="description">{{viewModel.description}}</div>
+    </div>
+    <div class="data-column">
+        <div class="data-row" [ngClass]="authorTypeToClass()">
+            <div class="star-logo icon-star" [ngClass]="authorTypeToClass()"></div>
+            <div class="data-text">{{viewModel.starCount}}</div>
+            <div class="fork-logo icon-fork" [ngClass]="authorTypeToClass()"></div>
+            <div class="data-text">{{viewModel.forkCount}}</div>
+        </div>
+    </div>
+</a>
