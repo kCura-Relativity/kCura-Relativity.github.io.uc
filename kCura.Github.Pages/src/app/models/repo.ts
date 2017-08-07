@@ -10,4 +10,5 @@
     topics: string[];
     partner: string;
     authorType: string;
+    pushed_at: Date;
 }
