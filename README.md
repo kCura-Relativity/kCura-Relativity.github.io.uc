@@ -1,2 +1,2 @@
-# kCura-Relativity.github.io.uc
+# relativitydev.github.io.uc
 Repo for uncompiled code
