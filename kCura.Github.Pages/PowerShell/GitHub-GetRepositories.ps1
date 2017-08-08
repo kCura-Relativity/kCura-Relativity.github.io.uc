@@ -50,8 +50,8 @@ if ($rate_limit -and $rate_limit.rate -and $rate_limit.rate.remaining -gt 0){
     $putMessage = @{
         message='update repositories.json'
         committer=@{ 
-            name="tom roberts"
-            email="troberts@claritycon.com"
+            name="dev user"
+            email="devuser@email.com"
             }
         content = $encoded_content
         sha= $response.sha

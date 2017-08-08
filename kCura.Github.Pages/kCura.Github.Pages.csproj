@@ -128,6 +128,7 @@
     <Content Include="src\content\fonts\cartograph-sans-cf\cartograph-sans-cf-medium-italic.woff2" />
     <Content Include="src\content\data\topics.json" />
     <Content Include="src\app\components\partner-panel\partner-panel.component.scss" />
+    <Content Include="PowerShell\GitHub-GetRepositories.ps1" />
     <None Include="src\app\components\partner-panel\partner-panel-item\partner-panel-item.component.scss" />
     <Content Include="src\app\components\repository\repository.component.scss" />
     <Content Include="src\app\components\repository\repository-item\repository-item.component.scss" />
