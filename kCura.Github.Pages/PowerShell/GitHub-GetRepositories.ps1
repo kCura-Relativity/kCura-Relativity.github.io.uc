@@ -1,6 +1,13 @@
 ﻿##REPLACE WITH LOCATION TO DROP REPOSITORIES.JSON FILE
 $local_json_file_location = 'C:\DEV\repository-list\repositories.json'
 
+#ACB: READ ORGS FROM LOCAL FILE (TODO: CONFIRM FILE PATH)
+$org_list_path = 'C:\DEV\organization-list\organizations.json'
+$partner_orgs = (Get-Content -Path $orgListPath | ConvertFrom-Json)
+
+#ACB: GET ORGS THAT ARE NOT BLANK
+$valid_partner_orgs = $partner_orgs | Where-Object { $_ -ne '' } 
+
 ##GITHUB API URL
 $githubUrl = 'https://api.github.com/'
 
