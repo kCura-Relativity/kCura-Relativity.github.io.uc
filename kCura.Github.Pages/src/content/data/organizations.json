@@ -1,7 +1,7 @@
 ﻿[
     {
         "name": "RELATIVITY",
-        "gitHubOrgName": "kcura-relativity",
+        "gitHubOrgName": "relativitydev",
         "authorType": "relativity"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "name": "TSD SERVICES",
-        "gitHubOrgName": "",
+        "gitHubOrgName": "tsdservices",
         "authorType": "development partners"
     },
     {

@@ -1,6 +1,13 @@
 ﻿##REPLACE WITH LOCATION TO DROP REPOSITORIES.JSON FILE
 $local_json_file_location = 'C:\DEV\repository-list\repositories.json'
 
+#ACB: READ ORGS FROM LOCAL FILE (TODO: CONFIRM FILE PATH)
+$org_list_path = 'C:\DEV\organization-list\organizations.json'
+$partner_orgs = (Get-Content -Path $orgListPath | ConvertFrom-Json)
+
+#ACB: GET ORGS THAT ARE NOT BLANK
+$valid_partner_orgs = $partner_orgs | Where-Object { $_ -ne '' } 
+
 ##GITHUB API URL
 $githubUrl = 'https://api.github.com/'
 
@@ -12,7 +19,7 @@ $client_id ='##############'
 $client_secret = '########################'
 
 ##CHECK RATE LIMIT URL
-$rate_limit_uri = $githubUrl+'rate_limit?client_id='+$client_id+'&client_secret='+$client_secret
+$rate_limit_uri = [System.String]::Format('{0}rate_limit?client_id={1}&client_secret={2}', $githubUrl, $client_id, $client_secret)
 
 ##GET RATE LIMIT RESULTS
 $rate_limit = Invoke-RestMethod -Uri $rate_limit_uri
@@ -20,39 +27,42 @@ $rate_limit = Invoke-RestMethod -Uri $rate_limit_uri
 ##IF THE RATE LIMIT HAS NOT BE EXCEEDED, GET THE RELATIVITYDEV REPOS
 if ($rate_limit -and $rate_limit.rate -and $rate_limit.rate.remaining -gt 0){
     
-    ##RELATIVITYDEV GET REPOS URL
-    $uri = $githubUrl+'orgs/'+$org+'/repos?client_id='+$client_id+'&client_secret='+$client_secret
-
-    ##GET REPOSITORIES FOR RELATIVITYDEV
-    $repositories = Invoke-RestMethod -Uri $uri 
-
     ##CREATING AN ARRAY TO STORE REPOSITORIES.JSON COLLECTION ITEMS
     $repositoryModels = New-Object System.Collections.Generic.List[System.Object]
 
-    ##LOOP THROUGH THE GET RELATIVITYDEV REPOSITORIES RESULTS
-    ##THIS WILL HAVE THE MOST RECENT/UPDATED RELATIVITYDEV REPOSITORY INFO
-    foreach($repo in $repositories) {
+    foreach($org in $valid_partner_orgs) {
 
-    ##CREATE REPOSITORY OBJECT FOR REPOSITORIES.JSON FILE
-        $repositoryItem = @{
-            id = $repo.id
-            name = $repo.name
-            full_name = $repo.full_name
-            html_url= $repo.html_url
-            description= $repo.description
-            stargazers_count= $repo.stargazers_count
-            forks_count= $repo.forks_count
-            partner= ""
-            authorType="" 
-            projectType= ""
-            topics= $repo.topics
-            isFeatured= $false
-            version= "9.5"
-            pushed_at = $repo.pushed_at
+    ##CONCAT VALID ORG GET URI
+    $uri = [System.String]::Format('{0}orgs/{1}/repos?client_id={2}&client_secret={3}', $githubUrl, $org, $client_id, $client_secret)
+
+    ##GET REPOSITORIES FOR ORG
+    $org_repos = Invoke-RestMethod -Uri $uri
+
+        ##LOOP THROUGH THE GET ORG REPOSITORIES RESULTS
+        ##THIS WILL HAVE THE MOST RECENT/UPDATED ORG REPOSITORY INFO
+        foreach($repo in $org_repos) {
+
+        ##CREATE REPOSITORY OBJECT FOR REPOSITORIES.JSON FILE
+            $repositoryItem = @{
+                id = $repo.id
+                name = $repo.name
+                full_name = $repo.full_name
+                html_url= $repo.html_url
+                description= $repo.description
+                stargazers_count= $repo.stargazers_count
+                forks_count= $repo.forks_count
+                partner= ""
+                authorType="" 
+                projectType= ""
+                topics= $repo.topics
+                isFeatured= $false
+                version= "9.5"
+                pushed_at = $repo.pushed_at
+            }
+
+            ##ADD REPOSITORY ITEM TO REPOSITORIES COLLECTION
+            $repositoryModels.Add($repositoryItem)
         }
-
-        ##ADD REPOSITORY ITEM TO REPOSITORIES COLLECTION
-        $repositoryMOdels.Add($repositoryItem)
     }
 
     ##CONVERT REPOSITORIES COLLECTION TO JSON FORMAT
