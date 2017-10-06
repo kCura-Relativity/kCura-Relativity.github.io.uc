@@ -19,7 +19,7 @@ $client_id ='##############'
 $client_secret = '########################'
 
 ##CHECK RATE LIMIT URL
-$rate_limit_uri = $githubUrl+'rate_limit?client_id='+$client_id+'&client_secret='+$client_secret
+$rate_limit_uri = [System.String]::Format('{0}rate_limit?client_id={1}&client_secret={2}', $githubUrl, $client_id, $client_secret)
 
 ##GET RATE LIMIT RESULTS
 $rate_limit = Invoke-RestMethod -Uri $rate_limit_uri
@@ -33,7 +33,7 @@ if ($rate_limit -and $rate_limit.rate -and $rate_limit.rate.remaining -gt 0){
     foreach($org in $valid_partner_orgs) {
 
     ##CONCAT VALID ORG GET URI
-    $uri = $githubUrl+'orgs/'+$org+'/repos?client_id='+$client_id+'&client_secret='+$client_secret
+    $uri = [System.String]::Format('{0}orgs/{1}/repos?client_id={2}&client_secret={3}', $githubUrl, $org, $client_id, $client_secret)
 
     ##GET REPOSITORIES FOR ORG
     $org_repos = Invoke-RestMethod -Uri $uri
